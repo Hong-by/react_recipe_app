@@ -1,19 +1,17 @@
 import React from 'react';
-import Sample from '../assets/img.jpg'
 
-const Recipe = () => {
+
+const Recipe = ({ title, calories, img, ingrs }) => {
+
 
   return (
     <div>
-      <h2>Chicken Curry</h2>
+      <h2>{title}</h2>
       <ul>
-        <li>1.사오기</li>
-        <li>2.사오기</li>
-        <li>3.사오기</li>
-        <li>4.사오기</li>
+        {ingrs.map((ingr, i) => (<li key={i}>{ingr.text}</li>))}
       </ul>
-      <p>칼로리 : 10000</p>
-      <img src={Sample} alt="" />
+      <p>칼로리 : {calories}</p>
+      <img src={img} alt="" />
     </div>
   );
 };
